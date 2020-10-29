@@ -1,0 +1,52 @@
+THIS PSEUDO CODE SIMULATES A SAMPLE SITUATION BUT IS NOT PSEUDO FOR GENERAL CASES (PROBABLY CODE FOR CONSOLE)
+-------------------------------------------------------------------------------------------------------------
+
+// 1 = wall
+// 0 = open space
+let 2darray = [
+    [ 0  0  0  0  0  0  0  0  0  0 ]
+    [ 0  0  0  0  0  0  0  0  0  0 ]
+    [ 0  0  0  1  1  0  0  0  0  0 ] 
+    [ 0  0  0  1  1  1  0  0  0  0 ] 
+    [ 0  0  1  1  1  1  1  0  0  0 ]
+    [ 0  0  0  0  1  1  0  0  0  0 ]
+    [ 0  0  0  0  0  0  0  0  0  0 ]
+    [ 0  0  0  0  0  0  0  0  0  0 ] 
+    [ 0  0  0  0  0  0  0  0  0  0 ] 
+    [ 0  0  0  0  0  0  0  0  0  0 ]  
+]
+
+
+// returns length of 2d array, then we subtract 6 to get index of 5 for reference to the 5th row,
+// then we get the length of the first row (does not matter which row because all rows have same 
+// amount of items) in the 2d array, then we subtract one to get the index of the last item (the 10th one)
+// which is an index of 9
+
+let goalA = [len(2darray) -6, len(2darray[0] -1)
+
+
+
+
+// cost function: f(n) = g(n) + h(n)
+
+/* 
+ * f(n) is cost
+ * g(n) is cost for moving one step
+ * h(n) is heuristic of (n)
+*/
+
+steps =>
+1. compute heuristic model of grid
+2. determine policies for each point based on cost
+
+
+BUILDING HEURISTIC MODEL
+
+// 2d array of possible moves
+let delta = [
+             [-1, 0] # go up
+             [0, -1] # go left      
+             [1, 0]  # go down     
+             [0, 1]  # go right     
+]
+let delta_name = ['^', '<', 'v', '>']
