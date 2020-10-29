@@ -3,6 +3,8 @@ THIS PSEUDO CODE SIMULATES A SAMPLE SITUATION BUT IS NOT PSEUDO FOR GENERAL CASE
 
 // 1 = wall
 // 0 = open space
+// LETS IN THIS CODE ARE JUST PLACEHOLDERS VARIABLE NAMES WILL VARY
+
 let 2darray = [
     [ 0  0  0  0  0  0  0  0  0  0 ]
     [ 0  0  0  0  0  0  0  0  0  0 ]
@@ -50,3 +52,35 @@ let delta = [
              [0, 1]  # go right     
 ]
 let delta_name = ['^', '<', 'v', '>']
+
+ACTION
+
+// return 2darray value that contains the heuristic steps to goal
+//    ex: [14, 99, 12, 99, 10] [13, 99, 11, 99, 9] [12, 11, 10, 99, 8]
+computeValue(grid, goal, cost) {
+    let value = []
+    value = 2darray
+    value[0][0] = 99
+
+    let visited = []
+    let count = 0
+    let x = goalA[0]
+    let y = goalA[1]
+    let point = [count, y, x]
+    visited.append(point)
+    let allChecked = false
+    let index = 0
+    count = 1
+    while (!allChecked) {
+        currentPoint =  visited[index]
+        index++
+        //populate neighbors
+        neighborList = [];
+        for (each move of delta) {
+            newPoint = currentPoint + move // move in direction from delta
+            if (newPoint is in grid, not barrier, and not already visited) {
+                append newPoint to neighborList
+            }
+        }
+    }
+}
