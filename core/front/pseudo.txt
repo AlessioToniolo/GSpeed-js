@@ -25,7 +25,7 @@ let 2darray = [
 // amount of items) in the 2d array, then we subtract one to get the index of the last item (the 10th one)
 // which is an index of 9
 
-let goalA = [len(2darray) -6, len(2darray[0] -1)
+let goalA = [len(2darray) -6, len(2darray[0] -1]
 
 
 
