@@ -1,4 +1,5 @@
 THIS PSEUDO CODE SIMULATES A SAMPLE SITUATION BUT IS NOT PSEUDO FOR GENERAL CASES (PROBABLY CODE FOR CONSOLE)
+(THIS PSEUDO CODE PROVIDES ALGORITHIM AND NOT RENDER FUNCIONALITY)
 -------------------------------------------------------------------------------------------------------------
 
 // 1 = wall
@@ -83,4 +84,51 @@ computeValue(grid, goal, cost) {
             }
         }
     }
+    for each n in neighborList {
+        let newX = x of n
+        let newY = y of n
+        let c = value[currentPoint] + 1
+        let newPoint = [c, newY, newX]
+        visited.appen(newPoint)
+        value[newY][newX] = c
+    }
+    // exit if all visited
+    if index > length of visited -1 {
+        allChecked = true
+    }
+
+
+    for d of value loop of (all columns in value) {}
+            for i of value[d] loop of (all values in value) {
+                if value[i][i] === 0 {
+                    value[i][i] = 99
+                }
+            }
 }
+    // for setting coordinate of goal to 0
+    let goalInValue1stValue = goalA[0]
+    let goalInValue2stValue = goalA[1]
+    value[goalInValue1stValue][goalInValue2stValue] = 0;
+
+    // returning for function
+    return value
+}
+
+FINDING PATH
+
+// finds goal as a reference point
+let ranFunction = compute_value(2darray, goalA, 1)
+
+let path = []
+
+for i of ranFunction {
+    for d of ranFunction[i]{
+        if ranFunction[i][d] === 0 {
+            let reference = ranFunction[i][d]
+            path.pushToEnd(reference)
+        }
+    }
+}
+
+2d loop through values around reference, then follow value with least cost assign it to VARIABLE,
+ and path.unShift( the new variable)
